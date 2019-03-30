@@ -5,6 +5,12 @@ body {
 	height: 100%;
 	font-family: 'Open Sans', sans-serif;
 }
+article {
+  display: none;
+}
+.show {
+  display: block;
+}
 
 h1,
 h2,

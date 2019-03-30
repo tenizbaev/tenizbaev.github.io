@@ -96,5 +96,29 @@ $(window).on('load', function () {
 		animateIn: 'fadeIn',
 	});
 
+})(jQuery)
+const links = document.querySelectorAll('nav a');
+const articles = document.querySelectorAll('article');
 
-})(jQuery);
+links.forEach(link => {
+	link.addEventListener('click', event => {
+		articles.forEach(article => {
+			article.className = '';
+			if (article.id == 'home' && link.id == 'home-link') {
+				article.className = 'show';
+			}
+			if (article.id == 'about' && link.id == 'about-link') {
+				article.className = 'show';
+			}
+			if (article.id == 'services' && link.id == 'services-link') {
+				article.className = 'show';
+			}
+			if (article.id == 'portfolio' && link.id == 'portfolio-link') {
+				article.className = 'show';
+			}
+			if (article.id == 'contact' && link.id == 'contact-link') {
+				article.className = 'show';
+			}
+		});
+	});
+});
