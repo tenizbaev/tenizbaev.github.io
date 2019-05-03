@@ -269,6 +269,12 @@ button:hover {
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   font-size: 1em;
 }
+.banner3 {
+  background-image: none;
+  height: auto;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  font-size: 1em;
+}
   #header-text {
       color: #2a4d69;
       opacity: 1;
