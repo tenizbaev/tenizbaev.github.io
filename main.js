@@ -53,3 +53,6 @@ linkMailto.addEventListener('click', function () {
   console.log(linkMailto.href);
 });
 console.log(linkMailto.href);
+
+let demo1 = document.querySelector('#demo-1')
+let demo2 = document.querySelector('#demo-2')
