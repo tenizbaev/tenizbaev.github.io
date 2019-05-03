@@ -1,364 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-	<title>Tenizbaev</title>
-	<meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>TU</title>
+    <link rel="stylesheet" href="navigation.css">
 
-	<meta name="keywords" content="photography, portfolio, onepage, creative, html">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="img/favicon.png" rel="shortcut icon" />
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
-	<link rel="stylesheet" href="css/bootstrap.min.css" />
-	<link rel="stylesheet" href="css/font-awesome.min.css" />
-	<link rel="stylesheet" href="css/flaticon.css" />
-	<link rel="stylesheet" href="css/animate.css" />
-	<link rel="stylesheet" href="css/owl.carousel.css" />
-	<link rel="stylesheet" href="css/style.css" />
-
-
+    <script>
+        function showContent(link) {
+            var cont = document.getElementById('content');
+            var loading = document.getElementById('loading');
+            cont.innerHTML = loading.innerHTML;
+            var http = createRequestObject();
+            if (http) {
+                http.open('get', link);
+                http.onreadystatechange = function () {
+                    if (http.readyState == 4) { cont.innerHTML = http.responseText; }
+                }
+                http.send(null);
+            }
+            else { document.location = link; }
+        }
+        // ajax объект
+        function createRequestObject() {
+            try { return new XMLHttpRequest() }
+            catch (e) {
+                try { return new ActiveXObject('Msxml2.XMLHTTP') }
+                catch (e) {
+                    try { return new ActiveXObject('Microsoft.XMLHTTP') }
+                    catch (e) { return null; }
+                }
+            }
+        } 
+    </script>
 </head>
 
 <body>
-	<div id="preloder">
-		<div class="loader"></div>
-	</div>
-	<article id="home" class="show">
-
-		<header class="header-section sp-pad">
-			<h3 class="site-logo">Tenizbaev</h3>
-
-			<div class="nav-switch">
-				<i class="fa fa-bars"></i>
-			</div>
-			<nav class="main-menu">
-				<ul>
-					<li><a href="#" id="home-link">Home</a></li>
-					<li><a href="#" id="about-link">About Me</a></li>
-					<li><a href="#" id="services-link">Services</a></li>
-					<li><a href="#" id="portfolio-link">Portfolio</a></li>
-					<li><a href="#" id="contact-link">Contact</a></li>
-				</ul>
-			</nav>
-		</header>
-		<section class="hero-section">
-			<div class="hero-slider owl-carousel">
-				<div class="hs-item set-bg sp-pad" data-setbg="img/hero-slider/1.jpg">
-					<div class="hs-text">
-						<h2 class="hs-title">Hello</h2>
-						<p class="hs-des">Let's work together <br>and create a masterpiece!</p>
-					</div>
-				</div>
-				<div class="hs-item set-bg sp-pad" data-setbg="img/hero-slider/2.jpg">
-					<div class="hs-text">
-						<h2 class="hs-title">I Hope</h2>
-						<p class="hs-des">That You like <br>To work with me</p>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<footer class="footer-section spad">
-			<div class="container text-center">
-				<h2>Let’s work together!</h2>
-				<p>tenizbaevulukbek@outlook.com</p>
-				<div class="social">
-					<a href="#"><i class="fa fa-facebook"></i></a>
-					<a href="#"><i class="fa fa-twitter"></i></a>
+    <nav class="menu-container">
+        <a href="#" class="menu-btn">MENU</a>
+        <div class="menu-slide">
+            <ul class="menu-list">
+                <li class="menu-item"><a href="#" onClick="showContent('page1.html')">Home</a></li>
+                <li class="menu-item"><a href="#" onClick="showContent('page2.html')">My Works</a></li>
+                <li class="menu-item"><a href="#" onClick="showContent('page3.html')">Services</a></li>
+                <li class="menu-item"><a href="#" onClick="showContent('page4.html')">About Me</a></li>
+                <li class="menu-item"><a href="#" onClick="showContent('page5.html')">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
 
 
-					</br>
-
-
-				</div>
-			</div>
-			</div>
-
-
-		</footer>
-
-	</article>
-
-	<article id="contact">
-		<header class="header-section sp-pad">
-			<h3 class="site-logo">Tenizabev</h3>
-
-			<div class="nav-switch">
-				<i class="fa fa-bars"></i>
-			</div>
-			<nav class="main-menu">
-				<ul>
-					<li><a href="#" id="home-link">Home</a></li>
-					<li><a href="#" id="about-link">About Me</a></li>
-					<li><a href="#" id="services-link">Services</a></li>
-					<li><a href="#" id="portfolio-link">Portfolio</a></li>
-					<li><a href="#" id="contact-link">Contact</a></li>
-				</ul>
-			</nav>
-		</header>
-		<section class="contact-section set-bg spad" data-setbg="img/contact-bg.jpg">
-			<div class="container-fluid contact-warp">
-				<div class="contact-text">
-					<div class="container p-0">
-						<span class="sp-sub-title">Tenizbaev Ulukbek</span>
-						<h3 class="sp-title">Stay in touch</h3>
-						<p>
-							If you have any questions or suggestions, please contact me :)</p>
-
-						<ul class="con-info">
-							<li><i class="flaticon-phone-call"></i>+996-555-49-80-98</li>
-							<li><i class="flaticon-envelope"></i>tenizbaevulukbek@outlook.com</li>
-							<li><i class="flaticon-placeholder"></i>Karakol , Kyrgyzstan</li>
-						</ul>
-					</div>
-				</div>
-			
-				<div class="container p-0">
-					<div class="row">
-						<div class="col-xl-8 offset-xl-4">
-							<form class="contact-form" action="">
-								<div class="row">
-									<div class="col-md-6">
-									<label for="name" id="label-name"></label>
-										<input type="text" id="name" placeholder="Your name">
-									</div>
-									<div class="col-md-6">
-									<label for="email" id="label-email"></label>
-										<input type="email" id="email" placeholder="E-mail">
-									</div>
-
-									<textarea placeholder="Message"
-									name="body-mail"
-              		id="body-mail"
-									></textarea>
-									<button class="site-btn light">Send</button>
-								</div>
-						</div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</section>
-		<footer class="footer-section spad">
-			<div class="container text-center">
-				<h2>Let’s work together!</h2>
-				<p>tenizbaevulukbek@outlook.com</p>
-				<div class="social">
-					<a href="#"><i class="fa fa-facebook"></i></a>
-					<a href="#"><i class="fa fa-twitter"></i></a>
-
-
-				</div>
-			</div>
-		</footer>
-	</article>
-
-	<article id="about">
+    <div id="content">
+    </div>
+    <div id="loading" style="display: none">
+        loading...
+    </div>
 
 
 
-		<header class="header-section sp-pad">
-			<h3 class="site-logo">Tenizabev</h3>
+    <script>
+        showContent('page1.html')
+    </script>
+    <script src="navigation.js"></script>
 
-			<div class="nav-switch">
-				<i class="fa fa-bars"></i>
-			</div>
-			<nav class="main-menu">
-				<ul>
-					<li><a href="#" id="home-link">Home</a></li>
-					<li><a href="#" id="about-link">About Me</a></li>
-					<li><a href="#" id="services-link">Services</a></li>
-					<li><a href="#" id="portfolio-link">Portfolio</a></li>
-					<li><a href="#" id="contact-link">Contact</a></li>
-				</ul>
-			</nav>
-		</header>
-		<div class="page-top-area set-bg" data-setbg="img/headers-bg/1.jpg">
-			<div class="breadcrumb-area">
-
-			</div>
-		</div>
-		<br>
-		<br>
-		<br>
-
-		<section class="intro-section sp-pad spad">
-			<div class="container-fluid p-0">
-				<div class="row">
-					<div class="col-xl-4 intro-text">
-						<h3 class="sp-title">About Me</h3>
-						<p>I Ulukbek know that I am special and there's no one else out there that's like me... so enjoy! I was
-							born
-							in Karakol on November 4, 2000. I had a very simple and happy childhood. I have two brothers. I love my
-							family. I live in Karakol city. I was study in High-School Gimnaziun №11 in Karakol city At 2018-to
-							present
-							i was study in "IT Academy"</p>
-					</div>
-					<div class="col-xl-7 offset-xl-1">
-						<figure class="intro-img mt-5 mt-xl-0">
-							<img src="img/intro.jpg" alt="">
-						</figure>
-					</div>
-				</div>
-			</div>
-		</section>
-		<br>
-		<br>
-		<br>
-
-
-		<footer class="footer-section spad">
-			<div class="container text-center">
-				<h2>Let’s work together!</h2>
-				<p>tenizbaevulukbek@outlook.com</p>
-				<div class="social">
-					<a href="#"><i class="fa fa-facebook"></i></a>
-					<a href="#"><i class="fa fa-twitter"></i></a>
-
-				</div>
-			</div>
-			</div>
-		</footer>
-	</article>
-
-	<article id="services">
-
-		<header class="header-section sp-pad">
-			<h3 class="site-logo">Tenizabev</h3>
-
-			<div class="nav-switch">
-				<i class="fa fa-bars"></i>
-			</div>
-			<nav class="main-menu">
-				<ul>
-					<li><a href="#" id="home-link">Home</a></li>
-					<li><a href="#" id="about-link">About Me</a></li>
-					<li><a href="#" id="services-link">Services</a></li>
-					<li><a href="#" id="portfolio-link">Portfolio</a></li>
-					<li><a href="#" id="contact-link">Contact</a></li>
-				</ul>
-			</nav>
-		</header>
-		<div class="page-top-area set-bg" data-setbg="img/headers-bg/3.jpg">
-			<div class="breadcrumb-area">
-
-			</div>
-		</div>
-		<section class="single-work-section sp-pad spad">
-
-			<div class="col-xl-6 offset-xl-1">
-				<h3 class="sp-title">I am so curious</h3>
-				<p>I am the first time in this area, but I provide a full cycle of development including analysis, research,
-					design, programming, testing.
-
-					I like to approach projects with the mindset to focus on the solution that delivers fast, cost-effective
-					results without compromising on code quality.
-
-					In the end, (client satisfaction, privacy, & confidentiality) contribution to my clients’ success, is the
-					biggest win..</p>
-
-			</div>
-			<div class="progress-section">
-				<div class="container-fluid">
-					<div class="row">
-						<div class="col-xl-3 col-md-6 cp-item">
-							<div class="circle-progress" data-cpid="id-1" data-cpvalue="75" data-cpcolor="#787878"
-								data-cptitle="Inspiration"></div>
-						</div>
-						<div class="col-xl-3 col-md-6 cp-item">
-							<div class="circle-progress" data-cpid="id-2" data-cpvalue="59" data-cpcolor="#787878"
-								data-cptitle="Peace"></div>
-						</div>
-						<div class="col-xl-3 col-md-6 cp-item">
-							<div class="circle-progress" data-cpid="id-3" data-cpvalue="100" data-cpcolor="#787878"
-								data-cptitle="hard work"></div>
-						</div>
-						<div class="col-xl-3 col-md-6 cp-item">
-							<div class="circle-progress" data-cpid="id-4" data-cpvalue="83" data-cpcolor="#787878"
-								data-cptitle="LOve"></div>
-						</div>
-					</div>
-				</div>
-			</div>
-			</div>
-			</div>
-		</section>
-
-		<footer class="footer-section spad">
-			<div class="container text-center">
-				<h2>Let’s work together!</h2>
-				<p>tenizabevulukbek@outlook.com</p>
-				<div class="social">
-					<a href="#"><i class="fa fa-facebook"></i></a>
-					<a href="#"><i class="fa fa-twitter"></i></a>
-
-				</div>
-			</div>
-		</footer>
-	</article>
-
-	<article id="portfolio">
-		<header class="header-section sp-pad">
-			<h3 class="site-logo">Tenizabev</h3>
-
-			<div class="nav-switch">
-				<i class="fa fa-bars"></i>
-			</div>
-			<nav class="main-menu">
-				<ul>
-					<li><a href="#" id="home-link">Home</a></li>
-					<li><a href="#" id="about-link">About Me</a></li>
-					<li><a href="#" id="services-link">Services</a></li>
-					<li><a href="#" id="portfolio-link">Portfolio</a></li>
-					<li><a href="#" id="contact-link">Contact</a></li>
-				</ul>
-			</nav>
-		</header>
-		<div class="page-top-area set-bg" data-setbg="img/headers-bg/3.jpg">
-			<div class="breadcrumb-area">
-
-			</div>
-		</div>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<section class="portfolio-section">
-			<div class="col-xl-6 offset-xl-1">
-				<h3 class="sp-title">Sorry but I don't have porfolio now :'(</h3>
-
-			</div>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<footer class="footer-section spad">
-				<div class="container text-center">
-					<h2>Let’s work together!</h2>
-					<p>tenizbaevulukbek@gmail.com</p>
-					<div class="social">
-						<a href="#"><i class="fa fa-facebook"></i></a>
-						<a href="#"><i class="fa fa-twitter"></i></a>
-
-
-					</div>
-				</div>
-			</footer>
-	</article>
-
-
-	<script src="js/jquery-3.2.1.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/mixitup.min.js"></script>
-	<script src="js/circle-progress.min.js"></script>
-	<script src="js/main.js"></script>
-	<script src="js/scripts.js"></script>
 </body>
 
 </html>
